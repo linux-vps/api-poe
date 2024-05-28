@@ -1,11 +1,9 @@
 # Import necessary libraries
 from g4f.client import Client
-# import gradio as gr
 from datetime import datetime
 import pytz
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import argparse
 app = Flask(__name__)
 CORS(app)
 
@@ -122,4 +120,4 @@ async def index() -> str:
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=8834)
