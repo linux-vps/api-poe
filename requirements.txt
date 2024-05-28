@@ -1,0 +1,7 @@
+flask
+flask_cors
+hypercorn
+poe_api_wrapper==1.4.1
+nest_asyncio
+asyncio
+quart
