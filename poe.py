@@ -36,7 +36,7 @@ def chat():
     if question is None:
         return "<p id='response'>Please enter a question</p>"
 
-    chat_code = '2c77oexhhct8s6gvgr0'
+    chat_code = '2cjemybgq3jrxa8w2g5'
     message = question
 
     if not message:
