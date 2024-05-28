@@ -19,7 +19,7 @@ class ChatClient:
     def send_message(self, message):
         response_chunks = []
         try:
-            for chunk in self.client.send_message(bot="gpt3_5", message=message, chatCode=self.chat_code):
+            for chunk in self.client.send_message(bot="chinchilla", message=message, chatCode=self.chat_code):
                 response_chunks.append(chunk["response"])
             return ''.join(response_chunks)
         except Exception as e:
