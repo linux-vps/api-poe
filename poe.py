@@ -45,5 +45,17 @@ def chat():
     response = chatGPT(chat_code, message)
     return response
 
+@app.route('/chat', methods=['POST'])
+def chat_post():
+    data = request.get_json()  
+    if 'text' not in data:
+        return jsonify({"error": "Text is required"}), 400
+
+    chat_code = '2cjemybgq3jrxa8w2g5'
+    message = data['text']
+
+    response = chatGPT(chat_code, message)
+    return response
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=os.environ.get('PORT', 8833))
