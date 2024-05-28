@@ -5,3 +5,6 @@ poe_api_wrapper==1.4.1
 nest_asyncio
 asyncio
 quart
+datetime
+pytz
+g4f
