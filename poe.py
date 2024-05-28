@@ -4,8 +4,8 @@ from flask_cors import CORS
 from poe_api_wrapper import PoeApi
 
 tokens = {
-    'b': "-s2b1z0sqdefuRhhbhMcLw%3D%3D",
-    'lat': "KjhgTCfSmIYEXieP6VXtECuKkX0GAMkaaDC%2B2l61wA%3D%3D"
+    'b': "-s2b1z0sqdefuRhhbhMcLw%3D%3D",   
+    'lat': "KpWRTgZv0FYx3KgDSFjmD5fpyw4FLxgshO1lAX6Pfw%3D%3D"
 }
 
 app = Flask(__name__)
