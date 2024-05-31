@@ -1,4 +1,5 @@
 import subprocess
+import re
 import threading
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -9,6 +10,7 @@ from g4f.client import Client
 app = Flask(__name__)
 CORS(app)
 
+PORT = 8834
 
 def currentTime():
     # Get the current time in Vietnam
@@ -58,20 +60,20 @@ def generate_writing_prompt(user_input):
     return response.choices[0].message.content
 
 def start_ssh_tunnel():
-    command = ["ssh", "-R", "80:localhost:8834", "localhost.run"]
+    command = ["ssh", "-R", f"80:localhost:{PORT}", "localhost.run"]
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+    url_pattern = re.compile(r"https:\/\/[a-zA-Z0-9\-]+\.lhr\.life")
 
     while True:
         output = process.stdout.readline()
         if output:
-            print(output.strip())
-            if ".life" in output:
-                # Extract the URL with the .life subdomain
-                start = output.find("https://")
-                end = output.find(".life") + 5
-                url = output[start:end]
+            match = url_pattern.search(output)
+            if match:
+                url = match.group(0)
                 print(f"Tunnel URL: {url}")
                 break
+
 
 @app.route("/", methods=["GET", "POST"])
 async def index() -> str:
@@ -108,4 +110,4 @@ if __name__ == "__main__":
     ssh_thread.start()
 
     # Run the Flask app
-    app.run(host='0.0.0.0', port=8834)
+    app.run(host='0.0.0.0', port=PORT)
