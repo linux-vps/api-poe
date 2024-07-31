@@ -5,7 +5,7 @@ from poe_api_wrapper import PoeApi
 
 tokens = {
     'b': "-s2b1z0sqdefuRhhbhMcLw%3D%3D",   
-    'lat': "KpWRTgZv0FYx3KgDSFjmD5fpyw4FLxgshO1lAX6Pfw%3D%3D"
+    'lat': "1b5kYucE7NJwoOifFFwdCtifQNDf3so%2F0PRh6HIlMg%3D%3D"
 }
 
 app = Flask(__name__)
