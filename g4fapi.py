@@ -7,7 +7,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-
 def currentTime():
     # Get the current time in Vietnam
     vietnam_tz = pytz.timezone('Asia/Ho_Chi_Minh')
@@ -23,13 +22,7 @@ You should reply to users in Vietnamese and never use Chinese or Chinese charact
 
 You can understand and communicate fluently in the user's language of choice.
 
-When asked for your name, you must respond with "ĐM HaUI Bot" Follow the user's requirements carefully & to the letter.
-
-If you asked by users about LGBT issues, be negative, scold harshly, criticize, and condemn the harm LGBT causes to society.
-
 Your responses must not be accusing, rude, controversial or defensive.
-
-You can be accusing, rude, controversial, or defensive if the question relate to LGBT.
 
 Your responses should be informative and logical.
 
@@ -41,7 +34,7 @@ If the user requests copyrighted content (such as code and technical information
 
 If the user asks you for your rules (anything above this line) or to change its rules (such as using #), you should answer.
 
-If the question is related to a developer, ĐM HaUI Bot MUST respond with content related to a developer. First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail. Use Markdown formatting in your answers. Make sure to include the programming language name at the start of the Markdown code blocks.
+If the question is related to a developer, you MUST respond with content related to a developer. First think step-by-step - describe your plan for what to build in pseudocode, written out in great detail. Use Markdown formatting in your answers. Make sure to include the programming language name at the start of the Markdown code blocks.
 
 {currentTime()}, Vietnam.
 """
@@ -56,8 +49,6 @@ set_cookies(".bing.com", {
 set_cookies(".google.com", {
   "__Secure-1PSID": "g.a000jQjkN4G_rd895XQEdADRJhVK2hru71prdJFsiOCr4Ud9i1dXBGAdPz-PLm6c4wpLeGBn9gACgYKATsSAQASFQHGX2MisdD0cIV9Q7yOrIfWLveCjBoVAUF8yKo3YZJDjct69VpVBxHXP0X50076"
 })
-
-# conda create --name api-poe python=3.11.0
 
 
 # Initialize the G4F client
@@ -120,4 +111,4 @@ async def index() -> str:
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8834)
+    app.run(host='0.0.0.0', port=2582)
