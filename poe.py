@@ -65,4 +65,4 @@ def chat_post():
     return response
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 8236))
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 8236), ssl_context=('cert.pem', 'key.pem'))
